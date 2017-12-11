@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScottCustomAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="317"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="SUCCESS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bk9-eQ-49G">
+                    <rect key="frame" x="0.0" y="138" width="300" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="P6a-3c-gcU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                    <color key="textColor" red="0.080761885373639264" green="0.67850188948781365" blue="0.28983744161093944" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ud-l7-V3A">
+                    <rect key="frame" x="52" y="244" width="197" height="33"/>
+                    <color key="backgroundColor" red="0.97647058819999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="197" id="TSb-fT-jNx"/>
+                        <constraint firstAttribute="height" constant="33" id="ag7-Iv-ZZD"/>
+                    </constraints>
+                    <state key="normal" title="完成" backgroundImage="btn_alert"/>
+                    <connections>
+                        <action selector="closeClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="3c1-KU-pBx"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_ok" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-KX-mLh">
+                    <rect key="frame" x="112" y="30" width="77" height="77"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜您已经转储成功！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxY-CR-Bjn">
+                    <rect key="frame" x="16" y="175" width="280" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Oe8-KX-mLh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="112" id="1Tb-aY-qv7"/>
+                <constraint firstAttribute="trailing" secondItem="Oe8-KX-mLh" secondAttribute="trailing" constant="111" id="2bq-K0-eVR"/>
+                <constraint firstAttribute="trailing" secondItem="MxY-CR-Bjn" secondAttribute="trailing" constant="4" id="3VH-Qf-G1r"/>
+                <constraint firstAttribute="bottom" secondItem="7ud-l7-V3A" secondAttribute="bottom" constant="40" id="D3y-RH-XKL"/>
+                <constraint firstAttribute="trailing" secondItem="bk9-eQ-49G" secondAttribute="trailing" id="P1I-6Q-0Sx"/>
+                <constraint firstItem="MxY-CR-Bjn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="SNR-xv-7qd"/>
+                <constraint firstItem="MxY-CR-Bjn" firstAttribute="top" secondItem="bk9-eQ-49G" secondAttribute="bottom" constant="16" id="aeM-F8-4RG"/>
+                <constraint firstItem="bk9-eQ-49G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eAc-fc-P1L"/>
+                <constraint firstItem="7ud-l7-V3A" firstAttribute="top" secondItem="MxY-CR-Bjn" secondAttribute="bottom" constant="51" id="eIu-l9-jVY"/>
+                <constraint firstItem="7ud-l7-V3A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="otD-vE-4HK"/>
+                <constraint firstItem="Oe8-KX-mLh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="pHr-kk-i8z"/>
+                <constraint firstItem="bk9-eQ-49G" firstAttribute="top" secondItem="Oe8-KX-mLh" secondAttribute="bottom" constant="31" id="pQT-Hz-8P9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="36" y="108.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alert_ok" width="77" height="77"/>
+        <image name="btn_alert" width="197" height="33"/>
+    </resources>
+</document>

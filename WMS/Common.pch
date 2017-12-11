@@ -1,0 +1,110 @@
+//
+//  Common.pch
+//  WMS
+//
+//  Created by wandou on 2017/8/25.
+//  Copyright © 2017年 wandou. All rights reserved.
+//
+
+#ifndef Common_pch
+#define Common_pch
+
+
+#pragma mark - ====宽高
+//基本宽高
+#define FTY_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define FTY_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define FTY_STATUS_HEIGHT 20.*FTY_HEIGHT_BASE
+#define FTY_NAVIGATION_HEIGHT 44.*FTY_HEIGHT_BASE
+#define FTY_SEGMENT_HEIGHT 44.*FTY_HEIGHT_BASE
+#define FTY_TABBAR_HEIGHT 49.*FTY_HEIGHT_BASE
+//适配宽高
+#define kIphone6Height 667.0
+#define kIphone6Width 375.0
+#define FTY_WIDTH_BASE (FTY_SCREEN_WIDTH/kIphone6Width)
+#define FTY_HEIGHT_BASE (FTY_SCREEN_HEIGHT/kIphone6Height)
+
+#define kFit(x) (FTY_SCREEN_WIDTH*((x)/kIphone6Width))
+#define MColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0f]
+#define TextSize kFit(16)
+
+#pragma mark - ====字体
+//普通体
+#define FTY_FONTTSIZE(xx) [UIFont systemFontOfSize:FTY_HEIGHT_BASE*xx]
+//粗体
+#define FTY_BOLD_FONTTSIZE(xx) [UIFont boldSystemFontOfSize:FTY_HEIGHT_BASE*xx]
+
+#pragma mark - ====为避免循环引用，弱化自身
+#define WeakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#pragma mark - ====日志
+
+//版本号
+#define VERSION [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+
+//侧边栏条目的尺寸
+
+#define GPDockItemWidth 100
+#define GPDockItemHeight 80
+
+#define PopViewWidth 250
+
+#define viewWidth  self.view.bounds.size.width
+
+#define TRANSFER_SUCCESS @"TRANSFER_SUCCESS"
+
+#import "ScottAlertController.h"
+#import "UIImage+ScottAlertView.h"
+#import "ScottCustomAlertView.h"
+#import "ScottCustomActionSheet.h"
+#import "FTYColor.h"
+#import "HttpTask.h"
+#import "FTYToastView.h"
+#import "FTYRegExpMatchTools.h"
+#import "FTYInfoVertifyTools.h"
+#import "WMSUser.h"
+#import "MJExtension.h"
+
+
+
+//#define WMS_BASE_URL @"http://10.229.255.31:8250/twms-hand/api"
+
+#define WMS_BASE_URL ([[NSUserDefaults standardUserDefaults] objectForKey:WMS_IP_ADDRESS]?[[NSUserDefaults standardUserDefaults] objectForKey:WMS_IP_ADDRESS]:@"http://10.229.255.31:8250/twms-hand/api")
+#define WMS_IP_ADDRESS @"WMS_IP_ADDRESS"
+#define WMS_IP @"WMS_IP"
+#define WMMS_PORT @"WMMS_PORT"
+
+#pragma mark - ====日志
+
+#define CADEBUG 1
+#if CADEBUG
+#define DLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define DLog(FORMAT, ...) nil
+
+#endif
+
+
+#pragma mark - ====库位管理选择项目
+
+typedef NS_ENUM(NSInteger, WarehouseManageSelection) {
+    WarehouseManageSelectWarehouse=1001,//1选择仓库
+    WarehouseManageSelectRegion,//2选择库区
+    WarehouseManageSelectShipper,//3选择货主
+    WarehouseManageSelectMaterial,//4选择物料
+    WarehouseManageSelectAssistant,//5选择辅助叉车
+    WarehouseManageSelectStatus,//6选择状态
+};
+
+typedef NS_ENUM(NSInteger, TransferType) {
+    TransferTypeBatch=2001,//批量转储
+    TransferTypeSingle,//单个转储
+};
+
+typedef NS_ENUM(NSInteger, ViewType) {
+    ViewTypeHomeView = 3001,//主页
+    ViewTypeStorageView,//转储页面
+};
+
+#endif /* Common_pch */
